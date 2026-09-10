@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tasyakuran Khitanan - Muhamad Nizar Lapapi</title>
+    <!-- Google Fonts & FontAwesome untuk Ikon -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #fcfbfa;
+            --primary-color: #556b2f; /* Sage Green */
+            --dark-color: #3b3a36;
+            --gold-color: #8c7853;
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            background-image: radial-gradient(#d4dec1 0.75px, transparent 0.75px);
+            background-size: 15px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #eae5d9;
+        }
+
+        @media(min-width: 481px) {
+            .container {
+                border-radius: 20px;
+                margin: 20px 0;
+            }
+        }
+
+        /* Cover Section */
+        #cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f4f6f0 0%, #e6ece0 100%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        #cover.hide {
+            transform: translateY(-100%);
+        }
+
+        .cover-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--gold-color);
+            margin-bottom: 10px;
+        }
+
+        .cover-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .guest-name {
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+            width: 100%;
+            border: 1px solid #dcd6c8;
+        }
+
+        .guest-name span {
+            font-size: 0.85rem;
+            color: #777;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .guest-name h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .btn-open {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 0.95rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(85, 107, 47, 0.3);
+            transition: 0.3s;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500;
+        }
+
+        .btn-open:hover {
+            background: #445624;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .arabic {
+            font-size: 1.5rem;
+            color: var(--gold-color);
+            margin-bottom: 15px;
+        }
+
+        .title-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            color: var(--gold-color);
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .title-section p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold-color);
+            margin: 0 auto 25px auto;
+            opacity: 0.5;
+        }
+
+        .child-name-card {
+            margin: 20px 0;
+        }
+
+        .child-name-card h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.7rem;
+            color: var(--gold-color);
+            margin-bottom: 5px;
+        }
+
+        .child-name-card .nickname {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .parents-info {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Event Details Box */
+        .event-box {
+            background: #f9f8f5;
+            border: 1px solid #e8e3d5;
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-bottom: 30px;
+        }
+
+        .event-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-item i {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            background: #eef2ea;
+            padding: 12px;
+            border-radius: 50%;
+        }
+
+        .event-text h4 {
+            font-size: 0.95rem;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .event-text p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .btn-maps {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-maps:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Closing */
+        .closing {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .regards {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark-color);
+        }
+
+        /* Music Floating Button */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .rotate {
+            animation: rotation 3s infinite linear;
+        }
+
+        @keyframes rotation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(359deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- COVER / HALAMAN DEPAN -->
+        <div id="cover">
+            <div class="cover-content">
+                <p style="font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: #777; margin-bottom: 5px;">Undangan Tasyakuran Khitanan</p>
+                <h1>Muhamad Nizar Lapapi</h1>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                
+                <div class="guest-name">
+                    <span>Tamu Undangan</span>
+                    <h3 id="guestName">Tamu Undangan</h3>
+                </div>
+
+                <button class="btn-open" onclick="openInvitation()">
+                    <i class="fa-solid fa-envelope-open"></i> Buka Undangan
+                </button>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT / ISI UNDANGAN -->
+        <div class="main-content">
+            <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            
+            <div class="title-section">
+                <h2>UNDANGAN KHITANAN</h2>
+                <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i, teman, dan kerabat sekalian untuk hadir pada acara tasyakuran khitan putra kami:</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="child-name-card">
+                <h1>MUHAMAD NIZAR LAPAPI</h1>
+                <div class="nickname">( Nizar )</div>
+                <div class="parents-info">
+                    Putra Pertama dari Pasangan:<br>
+                    <strong>Bapak Andri Saputra & Ibu Okta Vianti</strong>
+                </div>
+            </div>
+
+            <div class="event-box">
+                <div class="event-item">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <div class="event-text">
+                        <h4>Hari & Tanggal</h4>
+                        <p>Rabu, 16 September 2026</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <i class="fa-regular fa-clock"></i>
+                    <div class="event-text">
+                        <h4>Waktu</h4>
+                        <p>Pukul 08.00 WIB - Selesai</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="event-text">
+                        <h4>Lokasi Acara</h4>
+                        <p>Kp. Sukamanah RT. 03/05, Desa Tamansari, Kec. Rumpin, Kab. Bogor</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="https://maps.app.goo.gl/2Va8rzswhmaLsNJf7" target="_blank" class="btn-maps">
+                        <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <div class="closing">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra kami.<br><br>
+                <strong>Jazakumullahu Khairan Katsiran.</strong>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="regards">
+                Keluarga Besar<br>
+                Bapak Andri Saputra & Ibu Okta Vianti
+            </div>
+        </div>
+    </div>
+
+    <!-- Tombol Musik (Opsional, gunakan link audio instrument jika diinginkan) -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()" style="display: none;">
+        <i class="fa-solid fa-compact-disc" id="musicIcon"></i>
+    </button>
+
+    <script>
+        // Mengambil nama tamu dari URL (Contoh: namakamu.com/?to=Budi)
+        const urlParams = new URLSearchParams(window.location.search);
+        const recipient = urlParams.get('to');
+        if (recipient) {
+            document.getElementById('guestName').innerText = recipient;
+        }
+
+        const cover = document.getElementById('cover');
+        const bgMusic = document.getElementById('bgMusic');
+        const musicBtn = document.getElementById('musicBtn');
+        const musicIcon = document.getElementById('musicIcon');
+        let isPlaying = false;
+
+        function openInvitation() {
+            cover.classList.add('hide');
+            musicBtn.style.display = 'flex';
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                musicIcon.classList.add('rotate');
+            }).catch(e => {
+                console.log("Audio autoplay dibatasi browser");
+            });
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.classList.remove('rotate');
+                isPlaying = false;
+            } else {
+                bgMusic.play();
+                musicIcon.classList.add('rotate');
+                isPlaying = true;
+            }
+        }
+    </script>
+</body>
+</html>
